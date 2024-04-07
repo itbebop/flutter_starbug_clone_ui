@@ -67,6 +67,21 @@ class _HomeTabState extends State<HomeTab> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+          extendedIconLabelSpacing: _floatButtonExtended ? 10 : 5,
+          extendedPadding: _floatButtonExtended ? null : const EdgeInsets.only(left: 16, top: 16, right: 12, bottom: 16),
+          icon: const Icon(Icons.moped_outlined, color: Colors.white),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+          backgroundColor: Color.fromARGB(255, 0, 171, 91),
+          onPressed: () {},
+          label: AnimatedSize(
+              duration: const Duration(milliseconds: 100),
+              child: _floatButtonExtended
+                  ? const Text(
+                      'Delivers',
+                      style: TextStyle(color: Colors.white, fontSize: 22),
+                    )
+                  : const SizedBox())),
       bottomNavigationBar: NavigationBar(
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home_outlined), label: 'Home'),
